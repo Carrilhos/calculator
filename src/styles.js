@@ -7,3 +7,9 @@ export const MainContainer = styled.div`
 
   background-color: #a5a5e8;
 `;
+
+export const Center = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
