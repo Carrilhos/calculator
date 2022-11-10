@@ -4,6 +4,17 @@ import { CalculatorContext } from "../../context/CalculatorContext";
 
 import { ButtonBase, Text } from "./styles";
 
+const getClassName = (value) => {
+  const className = {
+    x: "operator",
+    "-": "operator",
+    "+": "operator",
+    "/": "operator",
+  };
+
+  return className[value];
+};
+
 const Button = ({ value }) => {
   const { calc, setCalc } = useContext(CalculatorContext);
 
@@ -101,7 +112,7 @@ const Button = ({ value }) => {
   };
 
   return (
-    <ButtonBase onClick={handleClick}>
+    <ButtonBase onClick={handleClick} className={`${getClassName(value)}`}>
       <Text>{value}</Text>
     </ButtonBase>
   );
